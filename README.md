@@ -20,7 +20,7 @@ Apart from that, It was just a front-end website building exercise.
 
 ## How to use
 
-...
+The easiest way to test this project is by forking it and placing your own Pexels API key in the apiKey variable.
 
 ## Notes
 
