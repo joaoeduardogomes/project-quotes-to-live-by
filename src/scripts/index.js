@@ -1,8 +1,6 @@
-import { pexelsApiKey } from "./key.js"
-
 //? PEXELS API
 
-const apiKey = pexelsApiKey
+const apiKey = ""
 
 const query = 'scenery'
 
