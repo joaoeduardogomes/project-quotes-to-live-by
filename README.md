@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/00d12ede-325d-46a3-aecb-610193073f9e)
+![image](https://github.com/user-attachments/assets/cfec4ef5-806f-471b-a6e8-fc92556f9be9)
 
 # Quotes to Live By **🇺🇸**
 
