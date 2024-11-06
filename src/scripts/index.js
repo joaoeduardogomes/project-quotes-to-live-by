@@ -1,4 +1,4 @@
-import { pexelsApiKey } from "./key"
+import { pexelsApiKey } from "./key.js"
 
 //? PEXELS API
 
