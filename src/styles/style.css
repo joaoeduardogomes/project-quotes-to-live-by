@@ -1,0 +1,106 @@
+:root {
+    --color01: #f17528;
+    --color02: #F7FF58;
+    --color03: #A9CBB7;
+    --color04: #EFECCA;
+    --color05: #5E565A;
+}
+
+body {
+    background-color: var(--color05);
+}
+
+button {
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--color01);
+    border: 2px solid var(--color04);
+    color: var(--color04);
+    width: 12rem;
+    height: 3rem;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: var(--color03);
+        color: var(--color05);
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color04);
+    width: fit-content;
+    margin: 1rem auto;
+    padding: .5rem;
+    border-radius: 15px;
+    box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+#card {
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px 8px 0 0;
+}
+
+#card #cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6);
+}
+
+#quoteArea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color04);
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.851);
+    z-index: 1;
+    /* back layer: */
+    height: 100%;
+    background-color: #0000004c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #quote {
+        width: 90%;
+    }
+
+    #quoteAuthor::before {
+        content: "— ";
+    }
+}
+
+#credits {
+    font-family: Arial, Helvetica, sans-serif;
+
+    a {
+        color: var(--color01);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: all .3s ease;
+
+        &:hover {
+            border-color: var(--color01);
+        }
+    }
+}
