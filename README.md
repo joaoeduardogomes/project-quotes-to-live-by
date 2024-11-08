@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/cfec4ef5-806f-471b-a6e8-fc92556f9be9)
+![image](https://github.com/user-attachments/assets/e35110fe-41b8-4a7a-8fbc-e918c0fbe848)
+
 
 # Quotes to Live By **🇺🇸**
 
@@ -20,7 +21,7 @@ The Quotable API was also functional at first, but it seemed to have SSL issues,
 
 ## How to use
 
-You can see this project in action on CodePen.
+You can see this project in action on [CodePen](https://codepen.io/JoaoGomes/pen/NWQEKVj).
 
 ## Notes
 
