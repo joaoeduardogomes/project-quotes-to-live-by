@@ -16,6 +16,7 @@ Working with the Pexels API was challenging at first, as it was my first experie
 ## Lessons learned & challenges
 
 The biggest challenge was working with the Pexels API. I initially got it working on the first day, but eventually, I couldn't retrieve images anymore. As a workaround, I decided to create an array of images and randomly select one from it.
+The Quotable API was also functional at first, but it seemed to have SSL issues, so I decided to create an array for the quotes as well.
 
 ## How to use
 
@@ -23,7 +24,7 @@ You can see this project in action on CodePen.
 
 ## Notes
 
-This project uses [Quotable](https://github.com/lukePeavey/quotable) for the quotes. I stopped using Pexels API because it was stopped working for some reason.
+I decided not to use APIs in this project anymore. It was simpler to just create arrays and select a random element from them.
 
 ## **License**
 

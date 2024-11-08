@@ -1,5 +1,3 @@
-//? PIMAGES OBJECT:
-
 const imagesArray = [
     {
         img: "https://images.unsplash.com/photo-1707007694363-b8afb46ed639?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -111,6 +109,47 @@ const imagesArray = [
     }
 ]
 
+const quotesArray = [
+    { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { quote: "It always seems impossible until it’s done.", author: "Nelson Mandela" },
+    { quote: "Your time is limited, don’t waste it living someone else’s life.", author: "Steve Jobs" },
+    { quote: "The best way to predict the future is to create it.", author: "Abraham Lincoln" },
+    { quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+    { quote: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+    { quote: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+    { quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+    { quote: "You miss 100% of the shots you don’t take.", author: "Wayne Gretzky" },
+    { quote: "Act as if what you do makes a difference. It does.", author: "William James" },
+    { quote: "You must be the change you wish to see in the world.", author: "Mahatma Gandhi" },
+    { quote: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+    { quote: "Don’t wait. The time will never be just right.", author: "Napoleon Hill" },
+    { quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+    { quote: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+    { quote: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
+    { quote: "Keep your face always toward the sunshine—and shadows will fall behind you.", author: "Walt Whitman" },
+    { quote: "What lies behind us and what lies before us are tiny matters compared to what lies within us.", author: "Ralph Waldo Emerson" },
+    { quote: "It’s not whether you get knocked down, it’s whether you get up.", author: "Vince Lombardi" },
+    { quote: "The harder you work for something, the greater you’ll feel when you achieve it.", author: "Unknown" },
+    { quote: "Dream big and dare to fail.", author: "Norman Vaughan" },
+    { quote: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+    { quote: "Everything you’ve ever wanted is on the other side of fear.", author: "George Addair" },
+    { quote: "The only way to achieve the impossible is to believe it is possible.", author: "Charles Kingsleigh" },
+    { quote: "Success is not how high you have climbed, but how you make a positive difference to the world.", author: "Roy T. Bennett" },
+    { quote: "Don’t stop when you’re tired. Stop when you’re done.", author: "Unknown" },
+    { quote: "You don’t have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
+    { quote: "Failure is the opportunity to begin again more intelligently.", author: "Henry Ford" },
+    { quote: "It’s never too late to be what you might have been.", author: "George Eliot" },
+    { quote: "Don’t limit your challenges. Challenge your limits.", author: "Unknown" },
+    { quote: "The harder the battle, the sweeter the victory.", author: "Les Brown" },
+    { quote: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+    { quote: "The best way out is always through.", author: "Robert Frost" },
+    { quote: "Nothing in the world can take the place of Persistence. Talent will not; nothing is more common than unsuccessful men with talent.", author: "Calvin Coolidge" },
+    { quote: "A journey of a thousand miles begins with a single step.", author: "Lao Tzu" },
+    { quote: "What we think, we become.", author: "Buddha" },
+    { quote: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
+    { quote: "You are braver than you believe, stronger than you seem, and smarter than you think.", author: "A.A. Milne" }
+];
+
 function getPhoto(imagesArray) {
     const randomIndex = Math.floor(Math.random() * imagesArray.length)
     const randomPhoto = imagesArray[randomIndex]
@@ -126,31 +165,37 @@ function getPhoto(imagesArray) {
     photoLink.href = randomPhoto.imgUrl
 }
 
+function getQuote(quotesArray) {
+    const randomIndex = Math.floor(Math.random() * imagesArray.length)
+    const randomQuote = quotesArray[randomIndex]
 
-//? QUOTES API:
-function getQuote() {
-    const quotesUrl = "https://api.quotable.io/quotes/random"
+    const htmlQuote = document.querySelector('#quote')
+    htmlQuote.textContent = randomQuote.quote
 
-    fetch(quotesUrl)
-        .then(resp => {
-            return resp.json()
-        })
-        .then(data => {
-            //console.log(data)
-            const quote = document.querySelector('#quote')
-            const author = document.querySelector('#quoteAuthor')
-            quote.textContent = data[0].content
-            author.textContent = data[0].author
-        })
+    const htmlQuoteAuthor = document.querySelector('#quoteAuthor')
+    htmlQuoteAuthor.textContent = randomQuote.author
 }
 
-
-//? CALL BOTH FUNCTIONS:
 function changeCard() {
     getPhoto(imagesArray)
-    getQuote()
+    getQuote(quotesArray)
+}
+
+function downloadCard() {
+    const card = document.querySelector('#card');
+    domtoimage.toBlob(card)
+        .then(blob => {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'quote_card.png';
+            link.click();
+        })
+        .catch(error => {
+            console.error('Error saving image:', error);
+        });
 }
 
 changeCard()
 
 document.querySelector('#btn').addEventListener('click', changeCard)
+document.querySelector('#downloadBtn').addEventListener('click', downloadCard);
