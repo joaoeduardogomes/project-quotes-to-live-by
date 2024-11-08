@@ -44,8 +44,10 @@ main {
 }
 
 #card {
-    width: 600px;
-    height: 600px;
+    max-width: 600px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     overflow: hidden;
     position: relative;
     border-radius: 8px 8px 0 0;
@@ -65,7 +67,7 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--color04);
-    font-size: 30px;
+    font-size: 2.2rem;
     text-align: center;
     width: 100%;
     font-family: 'Playfair Display', serif;
@@ -102,5 +104,11 @@ main {
         &:hover {
             border-color: var(--color01);
         }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 10px;
     }
 }
