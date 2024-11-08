@@ -15,16 +15,15 @@ Working with the Pexels API was challenging at first, as it was my first experie
 
 ## Lessons learned & challenges
 
-The Pexels API requests were quite challenging. It was my first time dealing with this API and I wasn't understanding at first. But with a bit of documentation reading and researching I was able to get the returned object with all the useful data: the image itself, the image's owner and the link for visualizing the image on Pexels website.
-Apart from that, It was just a front-end website building exercise.
+The biggest challenge was working with the Pexels API. I initially got it working on the first day, but eventually, I couldn't retrieve images anymore. As a workaround, I decided to create an array of images and randomly select one from it.
 
 ## How to use
 
-The easiest way to test this project is by forking it and placing your own Pexels API key in the apiKey variable.
+You can see this project in action on CodePen.
 
 ## Notes
 
-This project uses two APIs: [Pexels API](https://www.pexels.com/api/) for the images and [Quotable](https://github.com/lukePeavey/quotable) for the quotes.
+This project uses [Quotable](https://github.com/lukePeavey/quotable) for the quotes. I stopped using Pexels API because it was stopped working for some reason.
 
 ## **License**
 
