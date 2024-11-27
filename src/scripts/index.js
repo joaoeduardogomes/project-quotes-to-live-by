@@ -1,6 +1,6 @@
 //? PEXELS API
 
-const apiKey = "UjdZyv0AR6XPoWDdXkMNDUz7276hABuWCY0GKl3SvZ961c4m4lQQ5ecZ"
+const apiKey = ""
 
 const query = 'scenery'
 
@@ -24,29 +24,47 @@ function getPhoto(data) {
     const randomPhoto = data.photos[randomIndex]
 
     const htmlImg = document.querySelector('#cardImg')
-    htmlImg.src = randomPhoto.src.large
-    htmlImg.alt = randomPhoto.alt
+    htmlImg.src = randomPhoto.img
 
     const authorLink = document.querySelector('#authorLink')
-    authorLink.href = randomPhoto.photographer_url
-    authorLink.textContent = randomPhoto.photographer
+    authorLink.href = randomPhoto.ownerUrl
+    authorLink.textContent = randomPhoto.ownerName
 
     const photoLink = document.querySelector('#photoLink')
-    photoLink.href = randomPhoto.url
+    photoLink.href = randomPhoto.imgUrl
 }
 
+function getQuote(quotesArray) {
+    const randomIndex = Math.floor(Math.random() * imagesArray.length)
+    const randomQuote = quotesArray[randomIndex]
 
-//? QUOTES API
-const quotesUrl = "https://api.quotable.io/quotes/random"
+    const htmlQuote = document.querySelector('#quote')
+    htmlQuote.textContent = randomQuote.quote
 
-fetch(quotesUrl)
-    .then(resp => {
-        return resp.json()
-    })
-    .then(data => {
-        //console.log(data)
-        const quote = document.querySelector('#quote')
-        const author = document.querySelector('#quoteAuthor')
-        quote.textContent = data[0].content
-        author.textContent = data[0].author
-    })
+    const htmlQuoteAuthor = document.querySelector('#quoteAuthor')
+    htmlQuoteAuthor.textContent = randomQuote.author
+}
+
+function changeCard() {
+    getPhoto(imagesArray)
+    getQuote(quotesArray)
+}
+
+function downloadCard() {
+    const card = document.querySelector('#card');
+    domtoimage.toBlob(card)
+        .then(blob => {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'quote_card.png';
+            link.click();
+        })
+        .catch(error => {
+            console.error('Error saving image:', error);
+        });
+}
+
+changeCard()
+
+document.querySelector('#btn').addEventListener('click', changeCard)
+document.querySelector('#downloadBtn').addEventListener('click', downloadCard);

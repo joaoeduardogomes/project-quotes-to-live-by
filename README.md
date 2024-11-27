@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/cfec4ef5-806f-471b-a6e8-fc92556f9be9)
+![image](https://github.com/user-attachments/assets/e35110fe-41b8-4a7a-8fbc-e918c0fbe848)
+
 
 # Quotes to Live By **🇺🇸**
 
@@ -15,16 +16,16 @@ Working with the Pexels API was challenging at first, as it was my first experie
 
 ## Lessons learned & challenges
 
-The Pexels API requests were quite challenging. It was my first time dealing with this API and I wasn't understanding at first. But with a bit of documentation reading and researching I was able to get the returned object with all the useful data: the image itself, the image's owner and the link for visualizing the image on Pexels website.
-Apart from that, It was just a front-end website building exercise.
+The biggest challenge was working with the Pexels API. I initially got it working on the first day, but eventually, I couldn't retrieve images anymore. As a workaround, I decided to create an array of images and randomly select one from it.
+The Quotable API was also functional at first, but it seemed to have SSL issues, so I decided to create an array for the quotes as well.
 
 ## How to use
 
-...
+You can see this project in action on [CodePen](https://codepen.io/JoaoGomes/pen/NWQEKVj).
 
 ## Notes
 
-This project uses two APIs: [Pexels API](https://www.pexels.com/api/) for the images and [Quotable](https://github.com/lukePeavey/quotable) for the quotes.
+I decided not to use APIs in this project anymore. It was simpler to just create arrays and select a random element from them.
 
 ## **License**
 
