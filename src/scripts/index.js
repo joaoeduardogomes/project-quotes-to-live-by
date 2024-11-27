@@ -1,6 +1,6 @@
 //? PEXELS API
 
-const apiKey = ""
+const apiKey = "UjdZyv0AR6XPoWDdXkMNDUz7276hABuWCY0GKl3SvZ961c4m4lQQ5ecZ"
 
 const query = 'scenery'
 
